@@ -1,1 +1,69 @@
+#include <iostream>
+#include <limits>
+using namespace std;
 
+int main()
+{
+//tạo biến a và b
+	int a, b;
+//dùng vòng lặp while(true) bắt người dùng nhập đến khi đúng thì thôi có thể bỏ để lấy cout và cin
+	while(true)
+	{
+		cout << "Vui Long Nhap So Thu Nhat: ";
+	    cin >> a;
+	    if(cin.fail())
+	{
+		cout << "Vui Long Nhap Lai Gia Tri a, b > 0 Va Phai La Mot So Nguyen" << endl;
+		cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+	}
+	else
+	{ 
+		break;
+	}
+	}
+	while(true)
+	{
+    cout << "Vui Long Nhap So Thu Hai: ";
+    cin >> b;
+	if(cin.fail())
+	{
+		cout << "Vui Long Nhap Lai Gia Tri a, b > 0 Va Phai La Mot So Nguyen" << endl;
+		cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+	}
+	else 
+	{
+		break;
+	}
+	}
+//xét điều kiện a phải >0 và b phải >0
+	if(a > 0 && b > 0)
+	{ 
+//Dùng vòng lặp khi a và b khác giá trị
+		while (a !=b)
+//Dùng tiên đề euclid để trừ đến khi hai ước đều là 1 (không phải tiêu chuẩn)
+	{
+		if(a > b)
+		{
+			a = a - b;
+		}
+		if(b > a)
+		{
+			b = b - a;
+		}
+	}
+//trừ đến khi đạt đủ điều kiện
+	if(a == 1)
+//xét nếu biến a bằng 1 thì thoả mãn if trên và cho ra dấu ngoặc nhọn
+	{
+		cout << "Day La Hai SNT Cung Nhau" << endl;
+	}
+//còn đây là khi điều kiện sai sẽ không thoả mãn
+	else
+	{
+		cout << "Day Khong La Hai SNT Cung Nhau" << endl;
+	}
+	}
+     return 0;
+	 }
