@@ -1,1 +1,37 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "c++ Debugger By MinRw", // Tên
 
+            "type": "cppdbg", //Loại C Plus Plus Debugger
+
+            "request": "launch",
+
+            "program": "${fileDirname}/${fileBasenameNoExtension}.exe",
+
+            "args": [],
+
+            "stopAtEntry": false, //Dừng lại tại điểm đánh dấu không?
+
+            "cwd": "${workspaceFolder}",
+
+            "environment": [],
+
+            "externalConsole": false, //Có muốn gọi thanh terminal không?
+
+            "MIMode": "gdb",
+
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": false //Có bỏ qua lỗi không?
+                }
+            ],
+
+            "preLaunchTask": "Debugger", //Trùng với label ở task.json
+            "miDebuggerPath": "C:/msys64/ucrt64/bin/gdb.exe" //file Debug
+        }
+    ]
+}
